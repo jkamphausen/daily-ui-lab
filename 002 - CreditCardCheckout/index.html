@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>002: Daily UI - Credit Card Checkout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            font-family: IBM Plex Sans;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div.credit-card {
+            /* 6.5 x 5.3*/
+            width: 85.00mm;
+            height: 53.00mm;
+            background-color: #1a1a1a;
+            color: whitesmoke;
+            border-radius: 15px;
+            font-family: IBM Plex Mono;
+        }
+
+        div.cc-inner {
+            padding: 1em;
+        }
+
+        label.cc-label {
+            margin-top: 1em;
+            font-size: .5em;
+            display: flex;
+            flex-direction: column;
+        }
+
+        input.cc-input {
+            color: whitesmoke;
+            background-color: transparent;
+            border: none;
+        }
+
+        input[name="cardNumberDisplay"] {}
+    </style>
+</head>
+
+<body>
+    <div class="checkout-container">
+        <div class="order-container">
+            ORDERS
+        </div>
+        <div class="form-container">
+            <form action="" class="checkout-form">
+                <div class="credit-card">
+
+                    <div class="cc-inner">
+                        <label class="cc-label" for="cardNumber">
+                            <span class="card-label">Card Number</span>
+                            <input class="cc-input" name="cardNumber" type="text" value="">
+                            <input class="cc-input" name="cardNumberDisplay" type="text" disabled>
+                        </label>
+
+                        <label class="cc-label" for="fullName">
+                            <span class="card-label">Card Owner</span>
+                            <input class="cc-input" name="fullName" type="text" value="LUDWIG M. VAN DER ROHE">
+                        </label>
+
+                        <label class="cc-label" for="expiryDate">
+                            <span class="card-label">Exp Date</span>
+                            <input class="cc-input" name="expiryDate" type="text" value="04/22">
+                        </label>
+                    </div>
+
+                </div>
+                <button type="submit">Pay</button>
+            </form>
+        </div>
+    </div>
+    <script lang="javascript" type="text/javascript">
+        const ccNumber = document.querySelector('input[name="cardNumber"]');
+        const ccNumberDisplay = document.querySelector('input[name="cardNumberDisplay"]');
+        const formatted = ccNumber.value.match(/.{1,4}/g).join(' ');
+        ccNumberDisplay.value = formatted;
+
+    </script>
+</body>
+
+</html>
