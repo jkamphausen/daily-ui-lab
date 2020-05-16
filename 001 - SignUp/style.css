@@ -1,0 +1,191 @@
+:root {
+  /* --japan-red: #C3002E;
+  --japan-yellow: #FFD749; */
+  --nakabeni: #C93756;
+  --sakura-iro: #FCC9B9;
+  --usubeni: #F2666C;
+  --grey: #ccc;
+  --dgrey: rgb(62, 62, 62);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+body > section {
+    flex: 1;
+    height: 100%;
+}
+
+section.image-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section.signup-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+}
+
+span.price {
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    transform: rotate(-15deg);
+    background-color: var(--usubeni);
+    padding: .75em;
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+
+    border: 3px solid white;
+}
+
+span.price:hover {
+    background-color: white;
+    color: var(--usubeni);
+    border: 3px solid var(--usubeni);
+}
+
+header > h2 {
+  font-size: 3em;
+  color: var(--nakabeni);
+}
+
+header > span {
+  font-size: 1em;
+  text-transform: uppercase;
+  color: var(--dgrey);
+}
+
+span.field {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+span.field > * {
+    width: 100%;
+}
+
+label {
+    font-size: .75em;
+    opacity: 0;
+}
+
+input {
+    border: none;
+    line-height: 3em;
+    height: 2em;
+    border-bottom: 1px solid var(--grey);
+    transition: 0.5 ease;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    outline: 0;
+}
+
+input:active, input:focus {
+    border-bottom: 2px solid var(--nakabeni);
+}
+
+section.image-section::after {
+    content: "";
+    background-image: url('../000 - Common/img/Unsplash/thomas-marban-EHK-EH1SRzQ-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.125;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;  
+}
+
+button {
+    border: none;
+    background-color: var(#FCC9B9);
+    padding: 1em;
+    margin-right: 1em;
+}
+
+form {
+    width: 600px;
+}
+
+div.terms {
+    padding-top: 2em;
+    font-size: .75em;
+}
+
+
+
+div.teasers {
+    display: flex;
+    flex-direction: row;
+}
+
+div.teaser-container {
+    flex: 1 1 200px;
+    width: 200px;
+    height: 150px;
+    position: relative;
+    margin: 0.5em;
+    padding: .5em;
+}
+
+div.teaser {
+    position: absolute;
+    width: 200px;
+    height: 150px;
+    padding: .5em;
+    top: 0;
+    left: 0;
+    background-color: var(--usubeni);
+    
+    color: white;
+    text-align: center;
+    opacity: 0;
+    z-index: 5;
+    transition: opacity ease-in .75s;
+}
+
+div.teaser:hover {
+    opacity: 0.95;
+    transition: opacity ease-in .5s;
+}
+
+div.teaser > h3 {
+    font-size: 1.5em;
+}
+
+
+
+img.teaser-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+a {
+    color: var(--usubeni);
+}
